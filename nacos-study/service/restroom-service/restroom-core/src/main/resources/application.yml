@@ -1,0 +1,54 @@
+server:
+  port: 20000
+  error:
+    include-exception: true
+    include-stacktrace: on_trace_param
+    include-message: always
+
+spring:
+  application:
+    name: restroom-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 125.124.41.180:8848
+        metadata:
+          name: chandler2
+          like: swim1
+        naming-load-cache-at-start: false
+        cluster-name: cluster1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    open-in-view: false
+
+  datasource:
+    url: jdbc:mysql://125.124.41.180:3306/toilet_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 20000
+      idle-timeout: 20000
+      maximum-pool-size: 20
+      minimum-idle: 5
+      max-lifetime: 30000
+      auto-commit: true
+      pool-name: imoocDataSourcePool
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false
