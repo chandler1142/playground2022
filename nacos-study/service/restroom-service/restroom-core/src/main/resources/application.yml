@@ -30,7 +30,7 @@ spring:
   datasource:
     url: jdbc:mysql://125.124.41.180:3306/toilet_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
     username: root
-    password: root
+    password: gaonimeiA1!
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
