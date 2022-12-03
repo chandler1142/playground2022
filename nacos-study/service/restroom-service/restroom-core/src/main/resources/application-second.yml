@@ -1,5 +1,5 @@
 server:
-  port: 21000
+  port: 20001
   error:
     include-exception: true
     include-stacktrace: on_trace_param
@@ -7,12 +7,16 @@ server:
 
 spring:
   application:
-    name: employee-service
+    name: restroom-service
   cloud:
     nacos:
       discovery:
         server-addr: 125.124.41.180:8848
-#        namespace: 488feac7-ce53-453b-b570-321c32d474f2
+        metadata:
+          name: chandler2
+          like: swim1
+        naming-load-cache-at-start: false
+        cluster-name: cluster1
   jpa:
     show-sql: true
     hibernate:
@@ -24,7 +28,7 @@ spring:
     open-in-view: false
 
   datasource:
-    url: jdbc:mysql://125.124.41.180:3306/employee_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://125.124.41.180:3306/toilet_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
     username: root
     password: gaonimeiA1!
     type: com.zaxxer.hikari.HikariDataSource
@@ -38,16 +42,6 @@ spring:
       auto-commit: true
       pool-name: imoocDataSourcePool
 
-restroom-service:
-  ribbon:
-    # 默认是roundrobbin
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-    # NFLoadBalancerPingClassName:
-ribbon:
-  eager-load:
-    enabled: true
-    clients: restroom-service
-
 management:
   endpoint:
     health:
@@ -58,4 +52,3 @@ management:
         include: "*"
   security:
     enabled: false
-
