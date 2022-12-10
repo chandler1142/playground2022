@@ -52,3 +52,15 @@ management:
         include: "*"
   security:
     enabled: false
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:23000/user/endpoint
+    authorization:
+      check-token-access: http://localhost:23000/oauth/check_token
+    client:
+      access-token-uri: http://localhost:23000/oauth/token
+      client-id: client-a
+      client-secret: 123456
+      user-authorization-uri: http://localhost:23000/oauth/authorize
