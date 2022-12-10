@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: oauth-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 125.124.41.180:8848
+  redis:
+    host: test-cache.redis.cache.chinacloudapi.cn
+    port: 6380
+    database: 0
+    password: 8CWIM5kEdF9d1Ln4F8x65ClbrK1vznIuidU85r7e86w=
+    ssl: true
+
+server:
+  port: 23000
