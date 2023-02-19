@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>gateway</module>
+        <module>security/security-examples</module>
     </modules>
 
     <properties>
